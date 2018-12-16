@@ -1,0 +1,6 @@
+
+<template>
+	    <h1>${message}</h1>
+	<compose show.bind="showMemberEditForm" view="./components/editMember.html"></compose>
+	<compose show.bind="!showMemberEditForm" view="./components/tableMembers.html"></compose>
+</template>

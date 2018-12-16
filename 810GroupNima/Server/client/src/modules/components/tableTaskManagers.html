@@ -1,0 +1,35 @@
+<template>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th colspan="4">
+                                <span click.trigger="newTaskManager()"><i data-feather="plus"></i></span>
+                                <span click.trigger="getTaskManagers()" style="margin-left:5px;"><i data-feather="refresh-cw"></i></span>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Title</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Person</th>
+                            <th scope="col">Owner</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr click.trigger="editTaskManager(taskManager)" repeat.for="taskManager of taskManager.taskManagersArray">
+                           
+                            <td>${taskManager.title}</td>
+                            <td>${taskManager.status}</td>
+                            <td>${taskManager.personId.firstName} ${taskManager.personId.lastName} </td>
+                            <td>${taskManager.ownerId.firstName} ${taskManager.ownerId.lastName} </td>
+                        </tr>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</template>
